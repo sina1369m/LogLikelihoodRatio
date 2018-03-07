@@ -1,0 +1,19 @@
+clear;
+clc;
+load('UpperBound4.mat', 'UB','nn' );
+N_ub=floor(nn);
+clear nn;
+
+load('empirical_4_Bound_332.mat', 'diff','nn');
+N_emp=floor(nn(1:length(diff)));
+clear nn;
+
+s=find(UB>1)
+
+
+loglog(N_ub,UB,'-');
+hold on;
+loglog(N_emp,diff)
+%Trivial bound
+loglog(N_emp,diff)
+
